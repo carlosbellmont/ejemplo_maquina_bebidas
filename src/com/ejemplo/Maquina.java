@@ -1,6 +1,6 @@
 package com.ejemplo;
 
-public class MaquinaSinShortCode {
+public class Maquina {
 
     private Lata lata1;
     private Lata lata2;
@@ -15,7 +15,7 @@ public class MaquinaSinShortCode {
     private Lata lata11;
     private Lata lata12;
 
-    public MaquinaSinShortCode(){
+    public Maquina(){
         lata1 = new Lata("Coca-Cola", 33, 123412354101l);
         lata2 = new Lata("Coca-Cola Zero", 33, 123412354102l);
         lata3 = new Lata("Aquarius", 33, 123412354103l);
@@ -64,5 +64,58 @@ public class MaquinaSinShortCode {
         lata11.escribetePorPantallaResumido();
         lata12.escribetePorPantallaResumido();
         System.out.println();
+    }
+
+    public void escribeLatasConCafeina() {
+        escribeLataConCafeina(lata1);
+        escribeLataConCafeina(lata2);
+        escribeLataConCafeina(lata3);
+        escribeLataConCafeina(lata4);
+        System.out.println();
+        escribeLataConCafeina(lata5);
+        escribeLataConCafeina(lata6);
+        escribeLataConCafeina(lata7);
+        escribeLataConCafeina(lata8);
+        System.out.println();
+        escribeLataConCafeina(lata9);
+        escribeLataConCafeina(lata10);
+        escribeLataConCafeina(lata11);
+        escribeLataConCafeina(lata12);
+        System.out.println();
+    }
+
+    private void escribeLataConCafeina(Lata lata) {
+        if (lata.tieneCafeina()) {
+            lata.escribetePorPantallaResumido();
+        } else {
+            lata.escribetePorPantallaCuandoNoSeCumplesLosRequisitos();
+        }
+    }
+
+    public void escribeLatasSinCafeina() {
+        escribeLataSinCafeina(lata1);
+        escribeLataSinCafeina(lata2);
+        escribeLataSinCafeina(lata3);
+        escribeLataSinCafeina(lata4);
+        System.out.println();
+        escribeLataSinCafeina(lata5);
+        escribeLataSinCafeina(lata6);
+        escribeLataSinCafeina(lata7);
+        escribeLataSinCafeina(lata8);
+        System.out.println();
+        escribeLataSinCafeina(lata9);
+        escribeLataSinCafeina(lata10);
+        escribeLataSinCafeina(lata11);
+        escribeLataSinCafeina(lata12);
+        System.out.println();
+
+    }
+
+    private void escribeLataSinCafeina(Lata lata) {
+        if (!lata.tieneCafeina()){
+            lata.escribetePorPantallaResumido();
+        } else {
+            lata.escribetePorPantallaCuandoNoSeCumplesLosRequisitos();
+        }
     }
 }

@@ -12,7 +12,6 @@ public class Lata {
         this.cantidadDeBebida = cantidadDeBebida;
         this.codBarras = codBarras;
         rellenarShortCodeConIf();
-        //rellenarShortCodeConSwitch();
     }
 
     public Lata(String marca, int cantidadDeBebida, long codBarras, String shortCode){
@@ -61,15 +60,41 @@ public class Lata {
         }
     }
 
-
-
-
     public void escribetePorPantalla(){
         System.out.print("|" + marca + "|");
     }
 
     public void escribetePorPantallaResumido(){
         System.out.print("|" + shortCode + "|");
+    }
+
+    public void escribetePorPantallaCuandoNoSeCumplesLosRequisitos(){
+        System.out.print("|X |");
+    }
+
+    public boolean tieneAzucar(){
+        return false;
+    }
+
+    public boolean tieneCafeina(){
+        // Este IF es equivalente al siguiente pero lo simplificamos
+        // if (marca.contentEquals("Coca-Cola") || marca.contentEquals("Coca-Cola Zero")){
+        //    return true;
+        //} else if (marca.contentEquals("Aquarius") || marca.contentEquals("Aquarius Zero")) {
+        //    return false;
+        //}
+        //return false;
+        if (marca.contentEquals("Coca-Cola") || marca.contentEquals("Coca-Cola Zero")){
+            return true;
+        } else {
+            return false;
+        }
+        // Esta código es equivalente al anterior pero más resumido
+        // return marca.contentEquals("Coca-Cola") || marca.contentEquals("Coca-Cola Zero");
+    }
+
+    public boolean tieneGas(){
+        return false;
     }
 
 }
