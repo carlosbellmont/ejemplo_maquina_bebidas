@@ -11,7 +11,7 @@ public class Lata {
         this.marca = marca;
         this.cantidadDeBebida = cantidadDeBebida;
         this.codBarras = codBarras;
-        rellenarShortCodeConIf();
+        rellenarShortCodeConSwitch();
     }
 
     public Lata(String marca, int cantidadDeBebida, long codBarras, String shortCode){
@@ -35,7 +35,6 @@ public class Lata {
         }
     }
 
-
     private void rellenarShortCodeConSwitch() {
         switch (marca) {
             case "Coca-Cola":{
@@ -58,6 +57,7 @@ public class Lata {
                 this.shortCode = "¿?";
             }
         }
+
     }
 
     public void escribetePorPantalla(){
@@ -70,10 +70,6 @@ public class Lata {
 
     public void escribetePorPantallaCuandoNoSeCumplesLosRequisitos(){
         System.out.print("|X |");
-    }
-
-    public boolean tieneAzucar(){
-        return false;
     }
 
     public boolean tieneCafeina(){
@@ -94,7 +90,30 @@ public class Lata {
     }
 
     public boolean tieneGas(){
-        return false;
+        if (marca.contentEquals("Coca-Cola") || marca.contentEquals("Coca-Cola Zero")){
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    public boolean tieneAzucar(){
+        if (!marca.contains("Zero")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean noTieneAzucarNiCaifena() {
+        return !tieneAzucar() && !tieneCafeina();
+    }
+
+    public boolean noTieneAzucarNiCafeinaNiGas() {
+        return !tieneAzucar() && !tieneCafeina() && !tieneGas();
+    }
+
+    public boolean noTieneAzucarNiCafeinaConGas() {
+        return !tieneAzucar() && !tieneCafeina() && tieneGas();
+    }
 }
