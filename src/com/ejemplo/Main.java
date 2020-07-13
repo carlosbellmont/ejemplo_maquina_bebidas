@@ -23,68 +23,71 @@ public class Main {
         System.out.println("8 - Solo bebidas sin azucar y sin cafeina y sin gas");
         System.out.println("9 - Solo bebidas sin azucar y sin cafeina y con gas");
 
-        System.out.println("Introduce un número del 1 al 8 para elegir tu opción");
-        int numero = readIntFromKeyboard();
+        do {
+            System.out.println("Introduce un número del 1 al 8 para elegir tu opción");
+            int numero = readIntFromKeyboard();
 
-        switch (numero) {
-            case 1: {
-                System.out.println("Mostrando solo bebidas con cafeina");
-                // Quiero que maquina me muestre las latas que tienen cafeina
-                maquina.escribeLatasConCafeina();
-                break;
+            switch (numero) {
+                case 1: {
+                    System.out.println("Mostrando solo bebidas con cafeina");
+                    // Quiero que maquina me muestre las latas que tienen cafeina
+                    maquina.escribeLatasConCafeina();
+                    break;
+                }
+                case 2: {
+                    System.out.println("Mostrando solo bebidas sin cafeina");
+                    // Quiero que maquina me muestre las latas que no tienen cafeina
+                    maquina.escribeLatasSinCafeina();
+                    break;
+                }
+                case 3: {
+                    System.out.println("Mostrando solo bebidas sin gas");
+                    // Quiero que maquina me muestre las latas que tienen gas
+                    maquina.escribeLatasSinGas();
+                    break;
+                }
+                case 4:{
+                    System.out.println("Mostrando solo bebidas con gas");
+                    // Quiero que maquina me muestre las latas que tienen gas
+                    maquina.escribeLatasConGas();
+                    break;
+                }
+                case 5:{
+                    System.out.println("Solo bebidas azucaradas");
+                    // Quiero que maquina me muestre las latas que tienen azucar
+                    maquina.escribeLatasConAzucar();
+                    break;
+                }
+                case 6:{
+                    System.out.println("Mostrando solo bebidas sin azucar");
+                    // Quiero que maquina me muestre las latas que tienen azucar
+                    maquina.escribeLatasSinAzucar();
+                    break;
+                }
+                case 7:{
+                    System.out.println("Mostrando solo bebidas sin azucar y sin cafeina");
+                    // Quiero que maquina me muestre las latas que no tienen azucar y no tienen cafeina
+                    maquina.escribeLatasSinAzucarYSinCafeina();
+                    break;
+                }
+                case 8:{
+                    System.out.println("Mostrando solo bebidas sin azucar y sin cafeina y sin gas");
+                    // Quiero que maquina me muestre las latas que no tienen azucar y no tienen cafeina y no tiene gas
+                    maquina.escribeLatasSinAzucarSinCafeinaSinGas();
+                    break;
+                }
+                case 9:{
+                    System.out.println("Mostrando solo bebidas sin azucar y sin cafeina y con gas");
+                    // Quiero que maquina me muestre las latas que tienen azucar y tienen cafeina y tiene gas
+                    maquina.escribeLatasSinAzucarSinCafeinaConCafeina();
+                    break;
+                }
+                default: {
+                    System.out.println("Numero sin opcion. Me cierro. Adios");
+                    System.exit(0);
+                }
             }
-            case 2: {
-                System.out.println("Mostrando solo bebidas sin cafeina");
-                // Quiero que maquina me muestre las latas que no tienen cafeina
-                maquina.escribeLatasSinCafeina();
-                break;
-            }
-            case 3: {
-                System.out.println("Mostrando solo bebidas sin gas");
-                // Quiero que maquina me muestre las latas que tienen gas
-                maquina.escribeLatasSinGas();
-                break;
-            }
-            case 4:{
-                System.out.println("Mostrando solo bebidas con gas");
-                // Quiero que maquina me muestre las latas que tienen gas
-                maquina.escribeLatasConGas();
-                break;
-            }
-            case 5:{
-                System.out.println("Solo bebidas azucaradas");
-                // Quiero que maquina me muestre las latas que tienen azucar
-                maquina.escribeLatasConAzucar();
-                break;
-            }
-            case 6:{
-                System.out.println("Mostrando solo bebidas sin azucar");
-                // Quiero que maquina me muestre las latas que tienen azucar
-                maquina.escribeLatasSinAzucar();
-                break;
-            }
-            case 7:{
-                System.out.println("Mostrando solo bebidas sin azucar y sin cafeina");
-                // Quiero que maquina me muestre las latas que no tienen azucar y no tienen cafeina
-                maquina.escribeLatasSinAzucarYSinCafeina();
-                break;
-            }
-            case 8:{
-                System.out.println("Mostrando solo bebidas sin azucar y sin cafeina y sin gas");
-                // Quiero que maquina me muestre las latas que no tienen azucar y no tienen cafeina y no tiene gas
-                maquina.escribeLatasSinAzucarSinCafeinaSinGas();
-                break;
-            }
-            case 9:{
-                System.out.println("Mostrando solo bebidas sin azucar y sin cafeina y con gas");
-                // Quiero que maquina me muestre las latas que tienen azucar y tienen cafeina y tiene gas
-                maquina.escribeLatasSinAzucarSinCafeinaConCafeina();
-                break;
-            }
-            default: {
-                System.out.println("Numero sin opcion. Me cierro. Adios");
-            }
-        }
+        } while (true);
     }
 
 
