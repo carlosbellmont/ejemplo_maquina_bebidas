@@ -1,5 +1,7 @@
 package com.ejemplo;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,11 +9,34 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("-----------------------------");
         Maquina maquina = new Maquina();
-        System.out.println("Mostrando todas las bebidas");
+        Supermercado supermercado = new Supermercado();
+
+        ArrayList<MostrarStock> listaEstablecimientos = new ArrayList<>();
+        listaEstablecimientos.add(maquina);
+        listaEstablecimientos.add(supermercado);
+
+        for (MostrarStock establecimiento : listaEstablecimientos) {
+            establecimiento.nombreDelEstablecimiento();
+            establecimiento.escribetePorPantalla();
+            System.out.println();
+            establecimiento.escribetePorPantallaResumido();
+            System.out.println();
+        }
+
+    }
+
+
+
+    private static void mostranContenidoMaquinaEsencial(Maquina maquina){
+        System.out.println("Mostrando todas las bebidas de la máquina");
         maquina.escribetePorPantalla();
         maquina.escribetePorPantallaResumido();
         System.out.println("-----------------------------");
+    }
 
+
+    private static void mostranContenidoMaquina(Maquina maquina){
+        mostranContenidoMaquinaEsencial(maquina);
         System.out.println("¿Querido usuario, que quieres que te muestre?");
         System.out.println("1 - Solo bebidas con cafeina");
         System.out.println("2 - Solo bebidas sin cafeina");
@@ -89,7 +114,6 @@ public class Main {
             }
         } while (true);
     }
-
 
     private static int readIntFromKeyboard(){
         Integer result;

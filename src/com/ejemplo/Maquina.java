@@ -2,7 +2,7 @@ package com.ejemplo;
 
 import java.util.ArrayList;
 
-public class Maquina {
+public class Maquina implements MostrarStock{
 
     ArrayList<Lata> listaLatas = new ArrayList<>();
 
@@ -22,6 +22,12 @@ public class Maquina {
 
     }
 
+    @Override
+    public void nombreDelEstablecimiento() {
+        System.out.println("Soy la maquina");
+    }
+
+    @Override
     public void escribetePorPantalla(){
         /*
         Este codigo es equivalente al de abajo
@@ -33,7 +39,6 @@ public class Maquina {
 
         }
         System.out.println();*/
-
         for (int i = 0; i < listaLatas.size(); i++) {
             listaLatas.get(i).escribetePorPantalla();
             if (i % 4 == 3){
@@ -42,7 +47,7 @@ public class Maquina {
         }
     }
 
-
+    @Override
     public void escribetePorPantallaResumido(){
         for (int i = 0; i < listaLatas.size(); i++) {
             listaLatas.get(i).escribetePorPantallaResumido();
