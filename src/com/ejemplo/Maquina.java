@@ -45,22 +45,20 @@ public class Maquina {
 
     public void escribetePorPantallaResumido(){
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            listaLatas.get(i).escribetePorPantallaResumido();
+            if (i % 4 == 3){
                 System.out.println();
             }
-            listaLatas.get(i).escribetePorPantallaResumido();
         }
-        System.out.println();
     }
 
     public void escribeLatasConCafeina() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataConCafeina(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataConCafeina(listaLatas.get(i));
         }
-        System.out.println();
     }
 
     private void escribeLataConCafeina(Lata lata) {
@@ -73,13 +71,11 @@ public class Maquina {
 
     public void escribeLatasSinCafeina() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataSinCafeina(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataSinCafeina(listaLatas.get(i));
         }
-        System.out.println();
-
     }
 
     private void escribeLataSinCafeina(Lata lata) {
@@ -93,13 +89,11 @@ public class Maquina {
 
     public void escribeLatasSinGas() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataSinGas(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataSinGas(listaLatas.get(i));
         }
-        System.out.println();
-
     }
 
     private void escribeLataSinGas(Lata lata) {
@@ -112,13 +106,11 @@ public class Maquina {
 
     public void escribeLatasConGas() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataConGas(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataConGas(listaLatas.get(i));
         }
-        System.out.println();
-
     }
 
     private void escribeLataConGas(Lata lata) {
@@ -131,13 +123,11 @@ public class Maquina {
 
     public void escribeLatasConAzucar() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataConAzucar(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataConAzucar(listaLatas.get(i));
         }
-        System.out.println();
-
     }
 
     private void escribeLataConAzucar(Lata lata) {
@@ -150,13 +140,11 @@ public class Maquina {
 
     public void escribeLatasSinAzucar() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataSinAzucar(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataSinAzucar(listaLatas.get(i));
         }
-        System.out.println();
-
     }
 
     private void escribeLataSinAzucar(Lata lata) {
@@ -169,13 +157,11 @@ public class Maquina {
 
     public void escribeLatasSinAzucarYSinCafeina() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataSinAzucarYSinCafeina(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataSinAzucarYSinCafeina(listaLatas.get(i));
         }
-        System.out.println();
-
     }
 
     private void escribeLataSinAzucarYSinCafeina(Lata lata) {
@@ -189,12 +175,11 @@ public class Maquina {
 
     public void escribeLatasSinAzucarSinCafeinaSinGas() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataSinAzucarSinCafeinaSinGas(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataSinAzucarSinCafeinaSinGas(listaLatas.get(i));
         }
-        System.out.println();
     }
 
     private void escribeLataSinAzucarSinCafeinaSinGas(Lata lata) {
@@ -207,12 +192,11 @@ public class Maquina {
 
     public void escribeLatasSinAzucarSinCafeinaConCafeina() {
         for (int i = 0; i < listaLatas.size(); i++) {
-            if (i != 0 && (i % 4 == 0)){
+            escribeLataSinAzucarSinCafeinaConCafeina(listaLatas.get(i));
+            if (i % 4 == 3){
                 System.out.println();
             }
-            escribeLataSinAzucarSinCafeinaConCafeina(listaLatas.get(i));
         }
-        System.out.println();
     }
 
     private void escribeLataSinAzucarSinCafeinaConCafeina(Lata lata) {
