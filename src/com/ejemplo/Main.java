@@ -8,22 +8,56 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("-----------------------------");
         Maquina maquina = new Maquina();
+        maquina.addStock(crearStockMaquina());
         Supermercado supermercado = new Supermercado();
+        supermercado.addStock(crearStockSupermercado());
+        supermercado.addStock(crearStockSupermercado());
+        supermercado.addStock(crearStockSupermercado());
 
-        ArrayList<GestionarStock> listaEstablecimientos = new ArrayList<>();
+        ArrayList<MostrarStock> listaEstablecimientos = new ArrayList<>();
         listaEstablecimientos.add(maquina);
         listaEstablecimientos.add(supermercado);
 
-        for (GestionarStock establecimiento : listaEstablecimientos) {
+
+        maquina.removeStock(10);
+        maquina.removeStock(1000);
+
+        for (MostrarStock establecimiento : listaEstablecimientos) {
             establecimiento.nombreDelEstablecimiento();
             establecimiento.escribetePorPantalla();
             System.out.println();
             establecimiento.escribetePorPantallaResumido();
             System.out.println();
         }
-
     }
 
+    private static ArrayList<Lata> crearStockMaquina(){
+        ArrayList<Lata> listaLatas = new ArrayList<>();
+        listaLatas.add(new Lata("Coca-Cola", 33, 123412354101l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354102l));
+        listaLatas.add(new Lata("Aquarius", 33, 123412354103l));
+        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354104l));
+        listaLatas.add(new Lata("Coca-Cola", 33, 123412354105l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354106l));
+        listaLatas.add(new Lata("Aquarius", 33, 123412354107l));
+        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354108l));
+        listaLatas.add(new Lata("Coca-Cola", 33, 123412354109l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354110l));
+        listaLatas.add(new Lata("Aquarius", 33, 123412354111l));
+        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354112l));
+        return listaLatas;
+    }
+
+    private static ArrayList<Lata> crearStockSupermercado(){
+        ArrayList<Lata> listaLatas = new ArrayList<>();
+        listaLatas.add(new Lata("Coca-Cola", 33, 123412354101l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354102l));
+        listaLatas.add(new Lata("Coca-Cola", 33, 123412354105l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354106l));
+        listaLatas.add(new Lata("Coca-Cola", 33, 123412354109l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354110l));
+        return listaLatas;
+    }
 
 
     private static void mostranContenidoMaquinaEsencial(Maquina maquina){
@@ -112,6 +146,12 @@ public class Main {
                 }
             }
         } while (true);
+    }
+
+
+    private static String readStringFromKeyboard(){
+        Scanner keyboardReader = new Scanner(System.in);
+        return keyboardReader.nextLine();
     }
 
     private static int readIntFromKeyboard(){

@@ -1,26 +1,6 @@
 package com.ejemplo;
 
-import java.util.ArrayList;
-
-public class Maquina implements GestionarStock {
-
-    ArrayList<Lata> listaLatas = new ArrayList<>();
-
-    public Maquina(){
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354101l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354102l));
-        listaLatas.add(new Lata("Aquarius", 33, 123412354103l));
-        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354104l));
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354105l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354106l));
-        listaLatas.add(new Lata("Aquarius", 33, 123412354107l));
-        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354108l));
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354109l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354110l));
-        listaLatas.add(new Lata("Aquarius", 33, 123412354111l));
-        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354112l));
-
-    }
+public class Maquina extends GestionarStock implements MostrarStock {
 
     @Override
     public void nombreDelEstablecimiento() {
@@ -31,16 +11,16 @@ public class Maquina implements GestionarStock {
     public void escribetePorPantalla(){
         /*
         Este codigo es equivalente al de abajo
-        for (int i = 0; i < listaLatas.size(); i++) {
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
             if (i != 0 && (i % 4 == 0)){
                 System.out.println();
             }
-            listaLatas.get(i).escribetePorPantalla();
+            listaDeBebidas.get(i).escribetePorPantalla();
 
         }
         System.out.println();*/
-        for (int i = 0; i < listaLatas.size(); i++) {
-            listaLatas.get(i).escribetePorPantalla();
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            listaDeBebidas.get(i).escribetePorPantalla();
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -49,8 +29,8 @@ public class Maquina implements GestionarStock {
 
     @Override
     public void escribetePorPantallaResumido(){
-        for (int i = 0; i < listaLatas.size(); i++) {
-            listaLatas.get(i).escribetePorPantallaResumido();
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            listaDeBebidas.get(i).escribetePorPantallaResumido();
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -58,8 +38,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasConCafeina() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataConCafeina(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataConCafeina(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -75,8 +55,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasSinCafeina() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataSinCafeina(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataSinCafeina(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -93,8 +73,8 @@ public class Maquina implements GestionarStock {
 
 
     public void escribeLatasSinGas() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataSinGas(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataSinGas(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -110,8 +90,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasConGas() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataConGas(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataConGas(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -127,8 +107,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasConAzucar() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataConAzucar(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataConAzucar(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -144,8 +124,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasSinAzucar() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataSinAzucar(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataSinAzucar(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -161,8 +141,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasSinAzucarYSinCafeina() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataSinAzucarYSinCafeina(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataSinAzucarYSinCafeina(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -179,8 +159,8 @@ public class Maquina implements GestionarStock {
 
 
     public void escribeLatasSinAzucarSinCafeinaSinGas() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataSinAzucarSinCafeinaSinGas(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataSinAzucarSinCafeinaSinGas(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
@@ -196,8 +176,8 @@ public class Maquina implements GestionarStock {
     }
 
     public void escribeLatasSinAzucarSinCafeinaConCafeina() {
-        for (int i = 0; i < listaLatas.size(); i++) {
-            escribeLataSinAzucarSinCafeinaConCafeina(listaLatas.get(i));
+        for (int i = 0; i < listaDeBebidas.size(); i++) {
+            escribeLataSinAzucarSinCafeinaConCafeina(listaDeBebidas.get(i));
             if (i % 4 == 3){
                 System.out.println();
             }
