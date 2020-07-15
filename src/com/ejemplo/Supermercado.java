@@ -1,6 +1,6 @@
 package com.ejemplo;
 
-public class Supermercado implements MostrarStock{
+public class Supermercado implements GestionarStock {
 
     Lata l1;
     Lata l2;

@@ -2,7 +2,7 @@ package com.ejemplo;
 
 import java.util.ArrayList;
 
-public class Maquina implements MostrarStock{
+public class Maquina implements GestionarStock {
 
     ArrayList<Lata> listaLatas = new ArrayList<>();
 

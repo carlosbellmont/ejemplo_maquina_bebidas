@@ -1,6 +1,5 @@
 package com.ejemplo;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,11 +10,11 @@ public class Main {
         Maquina maquina = new Maquina();
         Supermercado supermercado = new Supermercado();
 
-        ArrayList<MostrarStock> listaEstablecimientos = new ArrayList<>();
+        ArrayList<GestionarStock> listaEstablecimientos = new ArrayList<>();
         listaEstablecimientos.add(maquina);
         listaEstablecimientos.add(supermercado);
 
-        for (MostrarStock establecimiento : listaEstablecimientos) {
+        for (GestionarStock establecimiento : listaEstablecimientos) {
             establecimiento.nombreDelEstablecimiento();
             establecimiento.escribetePorPantalla();
             System.out.println();

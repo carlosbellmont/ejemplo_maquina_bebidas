@@ -1,6 +1,6 @@
 package com.ejemplo;
 
-public interface MostrarStock {
+public interface GestionarStock {
 
     void nombreDelEstablecimiento();
 
