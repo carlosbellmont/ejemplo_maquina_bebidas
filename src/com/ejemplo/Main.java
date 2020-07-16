@@ -18,10 +18,6 @@ public class Main {
         listaEstablecimientos.add(maquina);
         listaEstablecimientos.add(supermercado);
 
-
-        maquina.removeStock(10);
-        maquina.removeStock(1000);
-
         for (MostrarStock establecimiento : listaEstablecimientos) {
             establecimiento.nombreDelEstablecimiento();
             establecimiento.escribetePorPantalla();
@@ -31,31 +27,46 @@ public class Main {
         }
     }
 
-    private static ArrayList<Lata> crearStockMaquina(){
-        ArrayList<Lata> listaLatas = new ArrayList<>();
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354101l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354102l));
-        listaLatas.add(new Lata("Aquarius", 33, 123412354103l));
-        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354104l));
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354105l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354106l));
-        listaLatas.add(new Lata("Aquarius", 33, 123412354107l));
-        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354108l));
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354109l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354110l));
-        listaLatas.add(new Lata("Aquarius", 33, 123412354111l));
-        listaLatas.add(new Lata("Aquarius Zero", 33, 123412354112l));
-        return listaLatas;
+    private static ArrayList<Botella> crearBotellas(){
+        ArrayList<Botella> listaBotellas = new ArrayList<>();
+        listaBotellas.add(new Botella("Coca-Cola", 123412354101l));
+        listaBotellas.add(new Botella("Coca-Cola Zero", 123412354102l));
+        listaBotellas.add(new Botella("Coca-Cola", 123412354105l));
+        listaBotellas.add(new Botella("Coca-Cola Zero", 123412354106l));
+        listaBotellas.add(new Botella("Coca-Cola", 123412354109l));
+        listaBotellas.add(new Botella("Coca-Cola Zero", 123412354110l));
+        return listaBotellas;
     }
 
-    private static ArrayList<Lata> crearStockSupermercado(){
-        ArrayList<Lata> listaLatas = new ArrayList<>();
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354101l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354102l));
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354105l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354106l));
-        listaLatas.add(new Lata("Coca-Cola", 33, 123412354109l));
-        listaLatas.add(new Lata("Coca-Cola Zero", 33, 123412354110l));
+    private static ArrayList<Bebida> crearStockMaquina(){
+        ArrayList<Bebida> listaBebidas = new ArrayList<>();
+        listaBebidas.add(new Lata("Coca-Cola", 123412354101l));
+        listaBebidas.add(new Lata("Coca-Cola Zero", 123412354102l));
+        listaBebidas.add(new Lata("Aquarius", 23412354103l));
+        listaBebidas.add(new Lata("Aquarius Zero", 123412354104l));
+        listaBebidas.add(new Lata("Coca-Cola", 123412354105l));
+        listaBebidas.add(new Lata("Coca-Cola Zero", 123412354106l));
+        listaBebidas.add(new Lata("Aquarius", 123412354107l));
+        listaBebidas.add(new Lata("Aquarius Zero", 123412354108l));
+        listaBebidas.add(new Lata("Coca-Cola", 123412354109l));
+        listaBebidas.add(new Lata("Coca-Cola Zero", 123412354110l));
+        listaBebidas.add(new Lata("Aquarius", 123412354111l));
+        listaBebidas.add(new Lata("Aquarius Zero", 123412354112l));
+
+        listaBebidas.addAll(crearBotellas());
+        return listaBebidas;
+    }
+
+    private static ArrayList<Bebida> crearStockSupermercado(){
+        ArrayList<Bebida> listaLatas = new ArrayList<>();
+        listaLatas.add(new Lata("Coca-Cola", 123412354101l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 123412354102l));
+        listaLatas.add(new Lata("Coca-Cola", 123412354105l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 123412354106l));
+        listaLatas.add(new Lata("Coca-Cola", 123412354109l));
+        listaLatas.add(new Lata("Coca-Cola Zero", 123412354110l));
+
+        listaLatas.addAll(crearBotellas());
         return listaLatas;
     }
 
@@ -89,55 +100,55 @@ public class Main {
                 case 1: {
                     System.out.println("Mostrando solo bebidas con cafeina");
                     // Quiero que maquina me muestre las latas que tienen cafeina
-                    maquina.escribeLatasConCafeina();
+                    maquina.escribeBebidasConCafeina();
                     break;
                 }
                 case 2: {
                     System.out.println("Mostrando solo bebidas sin cafeina");
                     // Quiero que maquina me muestre las latas que no tienen cafeina
-                    maquina.escribeLatasSinCafeina();
+                    maquina.escribeBebidasSinCafeina();
                     break;
                 }
                 case 3: {
                     System.out.println("Mostrando solo bebidas sin gas");
                     // Quiero que maquina me muestre las latas que tienen gas
-                    maquina.escribeLatasSinGas();
+                    maquina.escribeBebidasSinGas();
                     break;
                 }
                 case 4:{
                     System.out.println("Mostrando solo bebidas con gas");
                     // Quiero que maquina me muestre las latas que tienen gas
-                    maquina.escribeLatasConGas();
+                    maquina.escribeBebidasConGas();
                     break;
                 }
                 case 5:{
                     System.out.println("Solo bebidas azucaradas");
                     // Quiero que maquina me muestre las latas que tienen azucar
-                    maquina.escribeLatasConAzucar();
+                    maquina.escribeBebidasConAzucar();
                     break;
                 }
                 case 6:{
                     System.out.println("Mostrando solo bebidas sin azucar");
                     // Quiero que maquina me muestre las latas que tienen azucar
-                    maquina.escribeLatasSinAzucar();
+                    maquina.escribeBebidasSinAzucar();
                     break;
                 }
                 case 7:{
                     System.out.println("Mostrando solo bebidas sin azucar y sin cafeina");
                     // Quiero que maquina me muestre las latas que no tienen azucar y no tienen cafeina
-                    maquina.escribeLatasSinAzucarYSinCafeina();
+                    maquina.escribeBebidasSinAzucarYSinCafeina();
                     break;
                 }
                 case 8:{
                     System.out.println("Mostrando solo bebidas sin azucar y sin cafeina y sin gas");
                     // Quiero que maquina me muestre las latas que no tienen azucar y no tienen cafeina y no tiene gas
-                    maquina.escribeLatasSinAzucarSinCafeinaSinGas();
+                    maquina.escribeBebidasSinAzucarSinCafeinaSinGas();
                     break;
                 }
                 case 9:{
                     System.out.println("Mostrando solo bebidas sin azucar y sin cafeina y con gas");
                     // Quiero que maquina me muestre las latas que tienen azucar y tienen cafeina y tiene gas
-                    maquina.escribeLatasSinAzucarSinCafeinaConCafeina();
+                    maquina.escribeBebidasSinAzucarSinCafeinaConCafeina();
                     break;
                 }
                 default: {

@@ -10,7 +10,7 @@ public class Supermercado extends GestionarStock implements MostrarStock {
 
     @Override
     public void escribetePorPantalla() {
-        for (Lata lista : listaDeBebidas) {
+        for (Bebida lista : listaDeBebidas) {
             lista.escribetePorPantalla();
             System.out.println();
         }
@@ -18,7 +18,7 @@ public class Supermercado extends GestionarStock implements MostrarStock {
 
     @Override
     public void escribetePorPantallaResumido() {
-        for (Lata lista : listaDeBebidas) {
+        for (Bebida lista : listaDeBebidas) {
             lista.escribetePorPantallaResumido();
             System.out.println();
         }
