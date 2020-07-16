@@ -7,7 +7,6 @@ public abstract class Bebida {
     public long codBarras;
     public String shortCode;
 
-
     public Bebida(String marca, int cantidadDeBebida, long codBarras){
         this.marca = marca;
         this.cantidadDeBebida = cantidadDeBebida;
@@ -18,6 +17,9 @@ public abstract class Bebida {
     abstract void escribetePorPantalla();
     abstract void escribetePorPantallaResumido();
     abstract void escribetePorPantallaCuandoNoSeCumplesLosRequisitos();
+    abstract int getCoste();
+    abstract int getIngreso();
+
 
     private void rellenarShortCodeConSwitch() {
         switch (marca) {

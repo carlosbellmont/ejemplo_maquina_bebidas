@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Maquina extends GestionarStock implements MostrarStock {
 
 
+
     public void addStock(ArrayList<Bebida> listaDeBebidas){
         ArrayList<Lata> listaDeLatas = new ArrayList<>();
         for (Bebida bebida : listaDeBebidas) {
+            coste = coste + bebida.getCoste();
             if (bebida instanceof Lata){
                 listaDeLatas.add((Lata)bebida);
             }
@@ -15,6 +17,7 @@ public class Maquina extends GestionarStock implements MostrarStock {
 
         this.listaDeBebidas.addAll(listaDeBebidas);
     }
+
 
     @Override
     public void nombreDelEstablecimiento() {

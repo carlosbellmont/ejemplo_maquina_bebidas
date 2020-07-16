@@ -21,5 +21,14 @@ public class Lata extends Bebida {
         System.out.print("|X |");
     }
 
+    @Override
+    int getCoste() {
+        return 1;
+    }
+
+    @Override
+    int getIngreso() {
+        return 2;
+    }
 
 }

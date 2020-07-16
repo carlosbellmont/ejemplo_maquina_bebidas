@@ -22,4 +22,15 @@ public class Botella extends Bebida {
     }
 
 
+    @Override
+    int getCoste() {
+        return 2;
+    }
+
+    @Override
+    int getIngreso() {
+        return 5;
+    }
+
+
 }

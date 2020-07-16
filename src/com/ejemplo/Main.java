@@ -9,10 +9,15 @@ public class Main {
         System.out.println("-----------------------------");
         Maquina maquina = new Maquina();
         maquina.addStock(crearStockMaquina());
+        maquina.escribirInformeFinanciero();
+        maquina.removeStock(2);
+        maquina.escribirInformeFinanciero();
+
         Supermercado supermercado = new Supermercado();
         supermercado.addStock(crearStockSupermercado());
-        supermercado.addStock(crearStockSupermercado());
-        supermercado.addStock(crearStockSupermercado());
+        maquina.escribirInformeFinanciero();
+        supermercado.removeStock(6);
+        supermercado.escribirInformeFinanciero();
 
         ArrayList<MostrarStock> listaEstablecimientos = new ArrayList<>();
         listaEstablecimientos.add(maquina);

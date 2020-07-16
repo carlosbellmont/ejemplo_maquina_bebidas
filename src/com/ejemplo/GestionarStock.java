@@ -1,12 +1,39 @@
 package com.ejemplo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestionarStock {
 
     ArrayList<Bebida> listaDeBebidas = new ArrayList<>();
 
+    int ingreso = 0;
+    int coste = 0;
+
+
+    public int getBeneficio(){
+        return ingreso - coste;
+    }
+    public int getIngresos(){
+        return ingreso;
+    }
+    public int getCostes(){
+        return coste;
+    }
+
+    public void escribirInformeFinanciero(){
+        System.out.println("**********************INFORME FINANCIERO************************* ");
+        System.out.println("Los costes actualmente son de " + getCostes());
+        System.out.println("Los ingresos actualmente son de " + getIngresos());
+        System.out.println("Los beneficios actualmente son de " + getBeneficio());
+        System.out.println("***************************************************************** ");
+
+    }
+
     public void addStock(ArrayList<Bebida> listaDeBebidas){
+        for (Bebida bebida : listaDeBebidas){
+            coste = coste + bebida.getCoste();
+        }
         this.listaDeBebidas.addAll(listaDeBebidas);
     }
 
@@ -15,11 +42,13 @@ public class GestionarStock {
             System.out.println("No hay suficientes bebidas.");
             return false;
         } else {
-            this.listaDeBebidas.subList(0, numeroDeBebidas).clear();
-            //for (int i = 0; i < numeroDeBebidas; i++) {
-            //    this.listaDeBebidas.remove(0);
-            //}
+            List<Bebida> listaDeVentas = this.listaDeBebidas.subList(0, numeroDeBebidas);
+            for (Bebida bebida : listaDeVentas){
+                ingreso = ingreso + bebida.getIngreso();
+            }
             System.out.println("Se han vendido " + numeroDeBebidas + " bebidas");
+
+
             return true;
         }
     }
