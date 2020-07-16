@@ -1,11 +1,12 @@
 package com.ejemplo;
 
-public abstract class Bebida implements MostrarDetallesBebida{
+public abstract class Bebida {
 
     public String marca;
     public int cantidadDeBebida;
     public long codBarras;
     public String shortCode;
+
 
     public Bebida(String marca, int cantidadDeBebida, long codBarras){
         this.marca = marca;
@@ -13,6 +14,10 @@ public abstract class Bebida implements MostrarDetallesBebida{
         this.codBarras = codBarras;
         rellenarShortCodeConSwitch();
     }
+
+    abstract void escribetePorPantalla();
+    abstract void escribetePorPantallaResumido();
+    abstract void escribetePorPantallaCuandoNoSeCumplesLosRequisitos();
 
     private void rellenarShortCodeConSwitch() {
         switch (marca) {

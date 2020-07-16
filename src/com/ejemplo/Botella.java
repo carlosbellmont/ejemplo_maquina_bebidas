@@ -1,6 +1,6 @@
 package com.ejemplo;
 
-public class Botella extends Bebida implements MostrarDetallesBebida{
+public class Botella extends Bebida {
 
     public Botella(String marca, long codBarras){
         super(marca, 100, codBarras);
